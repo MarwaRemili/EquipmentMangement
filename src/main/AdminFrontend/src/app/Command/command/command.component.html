@@ -1,0 +1,54 @@
+ 
+<h1>Commands</h1>
+
+
+<div class="container">
+  <h2>Commands List</h2>
+   <table class="table">
+    <thead>
+      <tr>
+        <th class="hidden">id</th>
+        <th>ref</th>
+        <th>user</th>
+        <th>equipement</th>
+        <th>equipement quantity</th>
+        <th>quantity</th>
+        <th>date</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+          <tr *ngFor="let  c of commands">
+                  <td class="hidden">
+                      {{c.id}}
+                  </td>
+                  <td>
+                      {{c.ref}}
+                  </td>
+                  <td>
+                      {{c.student.name}}
+                  </td>
+                  <td>
+                    {{c.equipement.name}}
+                </td>
+                <td>
+                    {{c.equipement.quantity}}
+                </td>
+                <td>
+                  {{c.quantity}}
+              </td>
+              <td>
+                  {{c.date}}
+              </td>
+             
+            <td>
+                <button type="button" (click)="delete(c.id)" class="btn btn-danger">delete</button>
+                <button *ngIf="!c.status" type="button" (click)="validate(c)" class="btn btn-success">validate</button>
+               
+            </td>
+            <td> </td>
+                </tr>
+    </tbody>
+  </table>
+</div>

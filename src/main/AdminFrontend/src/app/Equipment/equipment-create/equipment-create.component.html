@@ -1,0 +1,27 @@
+<div class="col-md-6">
+  <h2 class="text-center">Add Equipment</h2>
+  <form [formGroup]="addForm">
+  <div class="form-group">
+      <label for="name">Equipment Name:</label>
+    <input class="form-control" [(ngModel)]="equipement.name" placeholder="Enter Equipment Name">
+    
+  </div>
+  <div class="form-group">
+      <label for="description">Equipment Description:</label>
+    <input class="form-control" [(ngModel)]="equipement.description" placeholder="Enter desc">
+    
+  </div>
+  <div class="form-group">
+      <label for="quantity">Equipment Quantity:</label>
+    <input class="form-control" [(ngModel)]="equipement.quantity" type="number" value="0">
+    
+  </div>
+  <div class="form-group">
+      <label for="max">Equipment Max:</label>
+    <input class="form-control" [(ngModel)]="equipement.max" type="number" value="0" >
+    
+  </div>
+  <button type="submit" class="btn btn-danger" (click)="create()">Create</button>
+</form>
+</div>
+<p>{{name}}</p>

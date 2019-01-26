@@ -1,0 +1,51 @@
+ 
+<h1>Catalog</h1>
+
+
+<div class="container">
+  <h2>Equipements List</h2>
+   <table class="table">
+    <thead>
+      <tr>
+        <th class="hidden">id</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Quantity</th>
+        <th>Maximum</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+          <tr *ngFor="let  eq of equipements">
+                  <td class="hidden">
+                      {{eq.id}}
+                  </td>
+                  <td>
+                      {{eq.name}}
+                  </td>
+                  <td>
+                      {{eq.description}}
+                  </td>
+                  <td>
+                    {{eq.quantity}}
+                </td>
+                <td>
+                  {{eq.max}}
+              </td>
+             
+            <td>
+              
+                <button type="button" (click)="edit(eq)" class="btn btn-primary">edit</button>
+            
+              
+                <button type="button" (click)="delete(eq.id)" class="btn btn-danger">delete</button>
+            </td>
+            <td> </td>
+                </tr>
+    </tbody>
+  </table>
+  <button class="btn btn-success" (click)="addNew()">add new Equipment</button>
+</div>
+
+<app-edit [equi]="equi"></app-edit>
